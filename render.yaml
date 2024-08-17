@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: text-sync-app
+    env: node
+    buildCommand: 'npm install'
+    startCommand: 'npm start'
+    plan: free
+    regions:
+      - oregon
