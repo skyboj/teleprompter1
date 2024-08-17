@@ -7,3 +7,5 @@ services:
     plan: free
     regions:
       - oregon
+    ports:
+      - 443 # Убедитесь, что Render ожидает HTTPS
