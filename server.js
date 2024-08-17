@@ -1,4 +1,3 @@
-// server.js
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
@@ -6,10 +5,13 @@ const WebSocket = require('ws');
 const express = require('express');
 
 const app = express();
-const port = process.env.PORT || 443;
+const port = process.env.PORT || 443; // Используйте переменную окружения PORT
 
-// Configure WebSocket server
-const server = https.createServer(app);
+const server = https.createServer({
+  key: fs.readFileSync(path.join(__dirname, 'cert', 'server.key')),
+  cert: fs.readFileSync(path.join(__dirname, 'cert', 'server.crt'))
+}, app);
+
 const wss = new WebSocket.Server({ server });
 
 wss.on('connection', ws => {
