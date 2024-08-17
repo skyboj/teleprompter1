@@ -7,6 +7,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 443; // Используйте переменную окружения PORT
 
+// Настройка HTTPS
 const server = https.createServer({
   key: fs.readFileSync(path.join(__dirname, 'cert', 'server.key')),
   cert: fs.readFileSync(path.join(__dirname, 'cert', 'server.crt'))
