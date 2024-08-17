@@ -1,0 +1,14 @@
+{
+  "name": "text-sync-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ws": "^8.7.0",
+    "https": "^1.0.0",
+    "fs": "0.0.1-security"
+  }
+}
